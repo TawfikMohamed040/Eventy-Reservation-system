@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\github\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj": {}
+    "F:\\github\\Eventy-Management-System\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj": {}
   },
   "projects": {
-    "F:\\github\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj": {
+    "F:\\github\\Eventy-Management-System\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\github\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj",
+        "projectUniqueName": "F:\\github\\Eventy-Management-System\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj",
         "projectName": "Eventy-System",
-        "projectPath": "F:\\github\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj",
+        "projectPath": "F:\\github\\Eventy-Management-System\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj",
         "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "F:\\github\\Eventy-Management-System\\Backend\\Eventy-System\\obj\\",
+        "outputPath": "F:\\github\\Eventy-Management-System\\Eventy-Management-System\\Backend\\Eventy-System\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",

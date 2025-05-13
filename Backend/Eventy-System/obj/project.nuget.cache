@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "re/1wvpOmLI=",
+  "dgSpecHash": "bHGgIMAcpZg=",
   "success": true,
-  "projectFilePath": "F:\\github\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj",
+  "projectFilePath": "F:\\github\\Eventy-Management-System\\Eventy-Management-System\\Backend\\Eventy-System\\Eventy-System.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lenovo\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

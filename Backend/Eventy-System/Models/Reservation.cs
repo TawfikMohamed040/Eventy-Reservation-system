@@ -1,8 +1,13 @@
-﻿namespace Eventy_System.Models;
-
-public class Reservation
+﻿namespace Eventy_System.Models
 {
-    int Id {set; get;}
-    Event Event {set; get;}
-    
+    public class Reservation
+    {
+        public int Id { get; set; }
+
+        public int EventId { get; set; }
+        public Event Event { get; set; }
+
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
+    }
 }

@@ -11,4 +11,5 @@ public class Event
     public string Category { get; set; }
     public double Price { get; set; }
     
+    public ICollection<Reservation> Reservations { get; set; }
 }

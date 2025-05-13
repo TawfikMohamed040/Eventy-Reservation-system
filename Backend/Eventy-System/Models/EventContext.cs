@@ -33,5 +33,18 @@ public class EventContext : IdentityDbContext<ApplicationUser>
                 .IsRequired();
             
         });
+        // Reservation -> Event many-to-one
+        modelBuilder.Entity<Reservation>()
+            .HasOne(r => r.Event)
+            .WithMany() 
+            .HasForeignKey(r => r.EventId)
+            .OnDelete(DeleteBehavior.Cascade); 
+
+        // Reservation -> ApplicationUser many-to-one
+        modelBuilder.Entity<Reservation>()
+            .HasOne(r => r.User)
+            .WithMany() 
+            .HasForeignKey(r => r.UserId)
+            .OnDelete(DeleteBehavior.Restrict); 
     }
 }
