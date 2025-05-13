@@ -1,0 +1,82 @@
+.role-management-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.role-management-container h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.role-management-container p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.role-management-container input[type="search"],
+.role-management-container select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: 0.3s border-color ease;
+}
+
+.role-management-container input[type="search"]:focus,
+.role-management-container select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.search-container {
+  position: relative;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  list-style: none;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.suggestions-list li:hover {
+  background-color: #f1f1f1;
+}
+.save-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #16a085;
+}

@@ -1,0 +1,37 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Eventy_System.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
+public class EventContext : IdentityDbContext<ApplicationUser>
+{
+    public DbSet<Event> Events { get; set; }
+    public EventContext(DbContextOptions<EventContext> options) : base(options)
+    {
+    }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Event>(entity =>
+        {
+            
+            entity.HasKey(e => e.Id);
+
+            entity.Property(e => e.EventName)
+                .IsRequired()            
+                .HasMaxLength(100);     
+            entity.Property(e => e.Date)
+                .HasColumnType("timestamp without time zone"); // PostgreSQL-specific type
+            entity.Property(e => e.Venue)
+                .IsRequired();
+            entity.Property(e => e.ImgUrl)
+                .IsRequired();
+            entity.Property(e => e.Category)
+                .IsRequired()
+                .HasMaxLength(50);
+            entity.Property(e => e.Price)
+                .IsRequired();
+            
+        });
+    }
+}

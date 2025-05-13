@@ -1,0 +1,7 @@
+.event-sections {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1rem;
+
+}

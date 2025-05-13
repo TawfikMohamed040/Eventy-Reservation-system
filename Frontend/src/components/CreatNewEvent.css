@@ -1,0 +1,103 @@
+.create-new-event {
+  margin: 30px auto;
+  width: 60%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.first-row,
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.event-element,
+.event-element-textarea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 45%;
+}
+
+.event-element-textarea textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: #fafafa;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+select option {
+  padding: 10px;
+  background-color: #fff;
+}
+
+.fifth-row {
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.create-event-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-event-btn {
+  background-color: #1abc9c;
+  color: #fff;
+}
+.create-event-btn:hover {
+  background-color: #16a085;
+}
+
+.cancel-btn {
+  background-color: #2c3e50;
+  color: #fff;
+}
+.cancel-btn:hover {
+  background-color: #34495e;
+}
