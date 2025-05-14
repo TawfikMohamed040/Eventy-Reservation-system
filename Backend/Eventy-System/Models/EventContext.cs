@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 public class EventContext : IdentityDbContext<ApplicationUser>
 {
     public DbSet<Event> Events { get; set; }
+    public DbSet<Reservation> Reservations { get; set; }
     public EventContext(DbContextOptions<EventContext> options) : base(options)
     {
     }

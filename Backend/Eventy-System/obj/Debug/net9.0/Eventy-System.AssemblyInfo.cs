@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Eventy-System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9daae6fc0eb24cbc7294589f74a2ebbf512873e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+727678bc874edfa2d75e3d3f64ed380ec12a490a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Eventy-System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Eventy-System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

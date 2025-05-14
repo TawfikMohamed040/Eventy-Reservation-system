@@ -2,8 +2,12 @@ using System.Text;
 using Eventy_System.Models;
 using Eventy_System.Repositories.AccountRepository;
 using Eventy_System.Repositories.Event;
+using Eventy_System.Repositories.Reservation;
+using Eventy_System.Repositories.RoleRepository;
 using Eventy_System.Services.AccountService;
 using Eventy_System.Services.EventService;
+using Eventy_System.Services.Reservation;
+using Eventy_System.Services.RoleService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +25,11 @@ builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IAccountRepository , AccountRepository>();
 builder.Services.AddScoped<IAccountService , AccountService>();
+builder.Services.AddScoped<IRoleRepository , RoleRepository>();
+builder.Services.AddScoped<IRoleService , RoleService>();
+builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+builder.Services.AddScoped<IReservationService, ReservationService>();
+
 
 builder.Services.AddDbContext<EventContext>(options =>
 {
