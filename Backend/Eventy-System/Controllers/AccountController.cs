@@ -1,7 +1,12 @@
-﻿using Eventy_System.DTOs;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Eventy_System.DTOs;
+using Eventy_System.Models;
 using Eventy_System.Services.AccountService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -30,12 +35,29 @@ public class AccountController : ControllerBase
     }
     
     [HttpPost ("Login")]
-    public IActionResult Login(LoginDTO userDto)
+    public async Task<IActionResult> Login(LoginDTO userDto)
     {
         if (ModelState.IsValid)
         {
-            
+            ApplicationUser user = await _accountService.FindByNameAsync(userDto);
+            if (user != null)
+            {
+                bool isPasswordValid = await _accountService.CheckPasswordAsync(user, userDto);
+                if (isPasswordValid)
+                {
+                    JwtSecurityToken token = await _accountService.BuildToken(user, userDto);
+                    
+                    return Ok(
+                        new
+                        {
+                            token = new JwtSecurityTokenHandler().WriteToken(token) , 
+                            expiration = DateTime.Now.AddDays(30)
+                        });
+                }
+            }
+            ModelState.AddModelError("" , "Invalid username or password");
         }
-        return Ok("Hello from EventsController!");
+        
+        return  BadRequest();
     }
 }

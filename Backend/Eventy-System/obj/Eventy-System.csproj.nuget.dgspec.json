@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -85,6 +89,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Scalar.AspNetCore": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

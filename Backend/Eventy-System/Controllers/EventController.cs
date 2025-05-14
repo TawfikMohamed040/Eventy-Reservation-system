@@ -1,7 +1,7 @@
-﻿using System.Formats.Tar;
-using Eventy_System.DTOs;
+﻿using Eventy_System.DTOs;
 using Eventy_System.Models;
 using Eventy_System.Services.EventService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Eventy_System.Controllers
@@ -21,6 +21,7 @@ namespace Eventy_System.Controllers
             return  Ok(await _eventService.GetAllAsync());
         }
         [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = "Bearer" )]
         public async Task<ActionResult<Event>> GetEventById(int id)
         {
             var eventItem = await _eventService.GetById(id);
@@ -29,6 +30,7 @@ namespace Eventy_System.Controllers
             return Ok(eventItem);
         }
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer" )]
         public async Task<ActionResult<Event>> CreateEvent(EventDTO eventItem)
         {
             var  eventObj = await _eventService.Create(eventItem);
@@ -37,6 +39,7 @@ namespace Eventy_System.Controllers
         }
 
         [HttpPut]
+        [Authorize(AuthenticationSchemes = "Bearer" )]
         public async Task<ActionResult<Event>> UpdateEvent( Event eventItem)
         {
              var  updatedEvent = await _eventService.Update(eventItem);
@@ -46,6 +49,7 @@ namespace Eventy_System.Controllers
              return Ok(updatedEvent);
         }
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = "Bearer" )]
         public async Task<IActionResult> DeleteEvent(int id)
         {
              var res = await _eventService.Delete(id);
