@@ -5,38 +5,40 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Eventy_System.Repositories.Reservation;
 
-public class ReservationRepository :IReservationRepository
+public class ReservationRepository : IReservationRepository
 {
     private readonly EventContext _context;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public ReservationRepository(EventContext context , UserManager<ApplicationUser> userManager)
+    public ReservationRepository(EventContext context, UserManager<ApplicationUser> userManager)
     {
-         _context = context;
-         _userManager = userManager;
+        _context = context;
+        _userManager = userManager;
     }
-    public  IEnumerable<Models.Reservation> GetAllReservations(string userId)
+
+    public IEnumerable<Models.Reservation> GetAllReservations(string userId)
     {
-        return  _context.Reservations.Where(u => u.UserId == userId).ToList();
+        return _context.Reservations.Where(u => u.UserId == userId).ToList();
     }
 
     public async Task<Models.Reservation> CreateReservationAsync(ReservationDTO reservationDto)
     {
         var user = await _userManager.FindByIdAsync(reservationDto.UserId);
-        var eventObj =await _context.Events.FirstOrDefaultAsync( e => e.Id == reservationDto.EventId);
+        var eventObj = await _context.Events.FirstOrDefaultAsync(e => e.Id == reservationDto.EventId);
+
         var reservation = new Models.Reservation
         {
-            User   = user,
+            User = user,
             Event = eventObj,
             UserId = user.Id,
             EventId = eventObj.Id
         };
-        await _context.Reservations.AddAsync(reservation);
 
+        await _context.Reservations.AddAsync(reservation);
         return reservation;
     }
 
-    public async void SaveAsync()
+    public async Task SaveAsync() // ✅ FIXED: Changed from async void
     {
         await _context.SaveChangesAsync();
     }

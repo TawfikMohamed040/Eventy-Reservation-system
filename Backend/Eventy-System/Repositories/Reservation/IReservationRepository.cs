@@ -8,5 +8,5 @@ public interface IReservationRepository
     public IEnumerable<Reservation> GetAllReservations( string userId);
     public Task<Reservation> CreateReservationAsync(ReservationDTO reservationDto);
 
-    public void SaveAsync();
+    public Task SaveAsync();
 }

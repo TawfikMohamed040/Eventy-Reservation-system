@@ -9,7 +9,7 @@ public interface IEventService
     Task<Event> GetById(int id);
     
     Task<Event> Create(EventDTO eventItem);
-    Task<Event> Update(Event eventItem);
+    Task<Event> Update(UpdataEventDTO eventItem);
     Task<bool> Delete(int id);
     
     void Save();

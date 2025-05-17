@@ -4,6 +4,7 @@ using Eventy_System.Services.RoleService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol;
 
 
 namespace Eventy_System.Controllers
@@ -23,18 +24,23 @@ namespace Eventy_System.Controllers
         {
              IdentityResult res = await _roleService.CreateRoleAsync(roleName);
              if (res.Succeeded)
-                 return Ok("Role created successfully");
+                 return Ok("Role created successfully".ToJson());
              return BadRequest();
         }
-        [HttpPost("AddRoleToUser")]
-        public async Task<IActionResult> AddRoleToUser(RoleDTO roleDto)
+        [HttpPost("ChangeUserRole")]
+        public async Task<IActionResult> ChangeUserRole(RoleDTO roleDto)
         {
-            IdentityResult res = await _roleService.AddRoleToUserAsync(roleDto);
+            IdentityResult res = await _roleService.ChangeUserRoleAsync(roleDto);
             if (res.Succeeded)
-                return Ok("Role added successfully");
+                return Ok("Role added successfully".ToJson());
             return BadRequest();
         }
-        
+
+        [HttpGet("GetAllUsers")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            return  Ok(await _roleService.GetAllUsersAsync());
+        }
     }
 }
 

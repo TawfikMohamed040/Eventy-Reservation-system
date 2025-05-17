@@ -28,7 +28,7 @@ public class EventService :IEventService
         return await _context.Create(eventItem);
     }
 
-    public async Task<Event> Update(Event eventItem)
+    public async Task<Event> Update(UpdataEventDTO eventItem)
     {
         var eventObj = await _context.GetById(eventItem.Id);
         if (eventObj == null)  

@@ -1,7 +1,7 @@
 .event-sections {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 1rem;
-
+    justify-content: center;
+    padding: 2rem 4vw;
 }

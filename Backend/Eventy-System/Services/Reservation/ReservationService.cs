@@ -11,6 +11,7 @@ public class ReservationService : IReservationService
     {
         _reservationRepository = reservationRepository;
     }
+
     public IEnumerable<Models.Reservation> GetAllReservations(string useId)
     {
         return _reservationRepository.GetAllReservations(useId);
@@ -21,8 +22,8 @@ public class ReservationService : IReservationService
         return await _reservationRepository.CreateReservationAsync(reservationDto);
     }
 
-    public void SaveAsync()
+    public async Task SaveAsync() 
     {
-        _reservationRepository.SaveAsync();
+        await _reservationRepository.SaveAsync();
     }
 }

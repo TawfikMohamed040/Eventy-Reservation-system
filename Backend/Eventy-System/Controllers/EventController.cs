@@ -18,7 +18,7 @@ namespace Eventy_System.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Event>>>  GetAllEvents()
         {
-            return  Ok(await _eventService.GetAllAsync());
+            return  Ok( await _eventService.GetAllAsync());
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Event>> GetEventById(int id)
@@ -39,9 +39,9 @@ namespace Eventy_System.Controllers
 
         [HttpPut]
         [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
-        public async Task<ActionResult<Event>> UpdateEvent( Event eventItem)
+        public async Task<ActionResult<Event>> UpdateEvent(  UpdataEventDTO updateEventDto)
         {
-             var  updatedEvent = await _eventService.Update(eventItem);
+             var  updatedEvent = await _eventService.Update(updateEventDto);
              if (updatedEvent == null)
                  return NotFound();
              _eventService.Save();

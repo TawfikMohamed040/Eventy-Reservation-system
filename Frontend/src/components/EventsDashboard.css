@@ -10,9 +10,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Top button section */
 .dashboard-container .create_event{
-    /* your styles here */
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -38,8 +36,6 @@
     background-color: #16a085;
 }
 
-
-/* Events Table */
 .events-table {
     width: 80%;
     border-collapse: collapse;
@@ -85,6 +81,7 @@
     height: 55px;
     object-fit: cover;
     border: 1px solid #ccc;
+    margin-right: 5px;
 }
 
 .event-info {

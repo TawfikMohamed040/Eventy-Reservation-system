@@ -6,5 +6,5 @@ public interface IReservationService
 {
     public IEnumerable<Models.Reservation> GetAllReservations( string useId);
     public Task<Models.Reservation> CreateReservationAsync(ReservationDTO reservationDto);
-    public void SaveAsync();
+    public Task SaveAsync();
 }

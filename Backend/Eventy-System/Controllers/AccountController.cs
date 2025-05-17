@@ -7,6 +7,7 @@ using Eventy_System.Services.AccountService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using NuGet.Protocol;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -25,7 +26,7 @@ public class AccountController : ControllerBase
         {
             IdentityResult result = await _accountService.CreateUserAsync(userDto);
             if (result.Succeeded)
-                return Ok("User created successfully");
+                return Ok("User created successfully".ToJson());
             foreach (var item in result.Errors)
             {
                 ModelState.AddModelError(string.Empty, item.Description);
